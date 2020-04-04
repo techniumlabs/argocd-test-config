@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: certmanager
+  namespace: argocd
+spec:
+  destination:
+    namespace: certmanager
+    server: https://192.168.64.4:8443
+  project: default
+  source:
+    path: apps/certmanager
+    repoURL: https://github.com/techniumlabs/argocd-test-config.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
