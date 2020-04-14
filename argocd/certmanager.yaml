@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: certmanager
-    server: https://192.168.64.4:8443
+    server: https://kubernetes.default.svc
   project: default
   source:
     path: apps/certmanager
